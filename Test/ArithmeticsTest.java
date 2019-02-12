@@ -38,8 +38,9 @@ class ArithmeticsTest {
 
     @org.junit.jupiter.api.Test
     void divException() {
-        assertThrows(ArithmeticException.class, ()->{
+        ArithmeticException e = assertThrows(ArithmeticException.class, ()->{
             a.div(14, 0);
         });
+        assertEquals("Dividing by 0 not allowed", e.getMessage());
     }
 }
