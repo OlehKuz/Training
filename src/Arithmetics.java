@@ -9,7 +9,7 @@ public class Arithmetics {
         return a * b;
     }
     public double div(double a, double b){
-        if (b == 0) throw new ArithmeticException();
+        if (b == 0) throw new ArithmeticException("Dividing by 0 not allowed");
         return a / b;
     }
 }

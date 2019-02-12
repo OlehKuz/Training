@@ -1,3 +1,5 @@
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArithmeticsTest {
