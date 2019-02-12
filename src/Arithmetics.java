@@ -9,6 +9,7 @@ public class Arithmetics {
         return a * b;
     }
     public double div(double a, double b){
+        if (b == 0) throw new ArithmeticException();
         return a / b;
     }
 }

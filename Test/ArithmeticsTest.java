@@ -1,9 +1,11 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArithmeticsTest {
+    private static Arithmetics a;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
+    @org.junit.jupiter.api.BeforeAll
+    static void setUp() {
+        a = new Arithmetics();
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -12,29 +14,32 @@ class ArithmeticsTest {
 
     @org.junit.jupiter.api.Test
     void add() {
-        Arithmetics test1Model  = new Arithmetics();
-        double res = test1Model.add(3, 7);
-        assertNotNull(test1Model);
+        double res = a.add(3, 7);
+        assertNotNull(a);
     }
 
     @org.junit.jupiter.api.Test
     void deduct() {
-        Arithmetics test2Model = new Arithmetics();
-        double res = test2Model.deduct(3, 7);
+        double res = a.deduct(3, 7);
         assertEquals(-4, res);
     }
-
+    @org.junit.jupiter.api.Disabled
     @org.junit.jupiter.api.Test
     void mult() {
-        Arithmetics test3Model = new Arithmetics();
-        double res = test3Model.mult(3, 7);
+        double res = a.mult(3, 7);
         assertEquals(21, res);
     }
 
     @org.junit.jupiter.api.Test
     void div() {
-        Arithmetics test4Model = new Arithmetics();
-        double res = test4Model.div(14, 7);
+        double res = a.div(14, 7);
         assertEquals(2, res);
+    }
+
+    @org.junit.jupiter.api.Test
+    void divException() {
+        assertThrows(ArithmeticException.class, ()->{
+            a.div(14, 0);
+        });
     }
 }
