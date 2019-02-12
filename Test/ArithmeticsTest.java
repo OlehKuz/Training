@@ -11,6 +11,13 @@ class ArithmeticsTest {
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }
+    
+    @org.junit.jupiter.api.Test
+    void timeoutNotExceeded(){
+        assertTimeout(Duration.ofMillis(1000),()-> {
+            a.div(14, 7);
+        });
+    }
 
     @org.junit.jupiter.api.Test
     void add() {
